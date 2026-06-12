@@ -21,7 +21,7 @@ class TaskFactory extends Factory
             // generate a random title for the task and remove the dot at the end of the sentence
             'title' => rtrim($this->faker->sentence(4), '.'),
             // draws one of the available statuses
-            'status' => $this->faker->randomElement(['pending', 'in_progress', 'completed']),
+            'status' => $this->faker->randomElement(['todo', 'in_progress', 'done']),
         ];
     }
 }
