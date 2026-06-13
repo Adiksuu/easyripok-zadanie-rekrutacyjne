@@ -1,0 +1,15 @@
+@use '../../../../css/variables.scss' as *;
+@use 'sass:color';
+
+.columnHeader {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.title {
+    color: $white;
+    font-size: 24px;
+    font-weight: 700;
+}

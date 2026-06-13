@@ -1,9 +1,9 @@
+import Header from "@/Components/Organisms/Header/Header"
+
 export default function MainLayout({ children } : { children?: React.ReactNode }) {
   return (
     <div className="app-container">
-        <header>
-            <h1>Moja Aplikacja Todo</h1>
-        </header>
+        <Header />
         <main>
             {children}
         </main>
