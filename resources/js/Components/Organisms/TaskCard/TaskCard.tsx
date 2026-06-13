@@ -13,7 +13,7 @@ export default function TaskCard({ task }: TaskCardProps) {
     return (
         <div className={`${styles.taskCard} ${isCompleted ? styles.completed : ''}`}>
             <div className={styles.leftSection}>
-                <TaskCheckbox isCompleted={isCompleted} />
+                <TaskCheckbox isCompleted={isCompleted} id={task.id} status={task.status} />
                 <span className={styles.title}>{task.title}</span>
             </div>
             <div className={styles.rightSection}>

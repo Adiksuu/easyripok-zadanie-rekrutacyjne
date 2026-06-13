@@ -1,14 +1,17 @@
 import Icon from '@/Components/Atoms/Icon/Icon'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import styles from './TaskCheckbox.module.scss'
+import { Link } from '@inertiajs/react';
 
 interface TaskCheckboxProps {
     isCompleted: boolean;
+    id: number;
+    status: string;
 }
 
-export default function TaskCheckbox({ isCompleted }: TaskCheckboxProps) {
+export default function TaskCheckbox({ isCompleted, id, status }: TaskCheckboxProps) {
     return (
-        <div className={styles.checkboxWrapper}>
+        <Link href={`/tasks/${id}/status`} method='patch' data={{ status: status === 'todo' ? 'in_progress' : 'done' }} as={"button"} className={styles.checkboxWrapper}>
             {isCompleted ? (
                 <div className={styles.checkedCircle}>
                     <Icon icon={faCheck} className={styles.checkIcon} />
@@ -16,6 +19,6 @@ export default function TaskCheckbox({ isCompleted }: TaskCheckboxProps) {
             ) : (
                 <div className={styles.uncheckedCircle} />
             )}
-    </div>
+    </Link>
   )
 }
