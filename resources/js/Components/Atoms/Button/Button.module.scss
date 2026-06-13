@@ -1,0 +1,10 @@
+@use '../../../../css/variables.scss' as *;
+.primaryButton {
+    background: $accent;
+    color: $white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}

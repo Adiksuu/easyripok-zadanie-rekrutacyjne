@@ -1,0 +1,14 @@
+@use '../../../../css/variables.scss' as *;
+@use 'sass:color';
+
+.badge {
+    background: color.adjust($accent, $lightness: 10%);
+    color: color.adjust($accent, $lightness: 40%);
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
