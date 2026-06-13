@@ -5,10 +5,11 @@ interface IconProps {
     icon: IconProp;
     size?: SizeProp;
     color?: string;
+    className?: string;
 }
 
-export default function Icon({ icon, size, color }: IconProps) {
+export default function Icon({ icon, size, color, className }: IconProps) {
     return (
-        <FontAwesomeIcon icon={icon} size={size} color={color} />
+        <FontAwesomeIcon icon={icon} size={size} color={color} className={className} />
     );
 }

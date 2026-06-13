@@ -1,0 +1,39 @@
+@use '../../../../css/variables.scss' as *;
+@use 'sass:color';
+
+.checkboxWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+.uncheckedCircle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid $gray;
+    transition: border-color 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+        border-color: color.adjust($gray, $lightness: -10%);
+    }
+}
+
+.checkedCircle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: $accent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.checkIcon {
+    font-size: 10px;
+    color: $white;
+}

@@ -1,2 +1,15 @@
 @use '../../../../css/variables.scss' as *;
-@use 'sass:color';
+
+.taskBoard {
+    padding: 0;
+}
+
+.tasksContainer {
+    background: $lightDark;
+    border: 1px solid $borderColor;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+}

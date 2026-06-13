@@ -1,0 +1,91 @@
+@use '../../css/variables.scss' as *;
+
+.appContainer {
+    background: $black;
+    min-height: 100vh;
+    color: $white;
+    font-family: 'Figtree', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 42px 42px 42px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.filterRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    padding: 0;
+}
+
+.tabsContainer {
+    display: flex;
+    background: #111215;
+    padding: 4px;
+    border-radius: 8px;
+    gap: 4px;
+    border: 1px solid #1e2026;
+}
+
+.tab {
+    padding: 8px 18px;
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: #f3f4f6;
+    }
+
+    &.active {
+        color: #a78bfa;
+        background: rgba(167, 139, 250, 0.05);
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 18px;
+            right: 18px;
+            height: 2px;
+            background: $accent;
+            border-radius: 1px;
+        }
+    }
+}
+
+.sortDropdown {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #111215;
+    border: 1px solid #1e2026;
+    color: #888b9a;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        border-color: #2e3039;
+        color: #f3f4f6;
+    }
+}

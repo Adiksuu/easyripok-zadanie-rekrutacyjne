@@ -1,5 +1,4 @@
 @use '../../../../css/variables.scss' as *;
-@use 'sass:color';
 
 .header {
     background: $black;
@@ -10,6 +9,6 @@
 }
 .text {
     color: $white;
-    font-size: 20px;
-    font-weight: 800;
+    font-size: 22px;
+    font-weight: 700;
 }

@@ -1,0 +1,69 @@
+@use '../../../../css/variables.scss' as *;
+@use 'sass:color';
+
+.taskCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background: transparent;
+    border-bottom: 1px solid $borderColor;
+    transition: background-color 0.2s ease;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &:hover {
+        background: color.adjust($lightDark, $lightness: 5%);
+    }
+}
+
+.leftSection {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.title {
+    color: $white;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.completed {
+    .title {
+        color: $completedText;
+        text-decoration: line-through;
+    }
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.flagRed {
+    color: #ef4444;
+}
+
+.flagYellow {
+    color: #f59e0b;
+}
+
+.flagGreen {
+    color: #10b981;
+}
+
+.documentIcon, .calendarIcon {
+    color: #4b5563;
+}
+
+.time {
+    font-size: 14px;
+    color: $gray;
+    min-width: 80px;
+    text-align: right;
+}

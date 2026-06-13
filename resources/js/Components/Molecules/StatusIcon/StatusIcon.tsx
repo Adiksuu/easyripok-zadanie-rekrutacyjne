@@ -1,6 +1,7 @@
 import Icon from "@/Components/Atoms/Icon/Icon";
 import { TaskStatus } from "@/types/task";
-import { faCheck, faCheckCircle, faHourglassStart } from "@fortawesome/free-solid-svg-icons";
+import { faCheckCircle, faHourglass } from "@fortawesome/free-regular-svg-icons";
+import { faMinus } from "@fortawesome/free-solid-svg-icons";
 
 interface StatusIconProps {
     status: TaskStatus;
@@ -9,10 +10,10 @@ interface StatusIconProps {
 export default function StatusIcon({ status }: StatusIconProps) {
   switch (status) {
     case 'in_progress':
-        return <Icon icon={faHourglassStart} />
+        return <Icon icon={faHourglass} color="#e9f937ff" />
     case 'done':
-        return <Icon icon={faCheckCircle} />
+        return <Icon icon={faCheckCircle} color="#00ff04ff" />
     default:
-        return <Icon icon={faCheck} />
+        return <Icon icon={faMinus} color="#464646ff" />
   }
 }

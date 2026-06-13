@@ -1,20 +1,24 @@
-import { Task, TaskStatus } from '@/types/task';
+import { Task } from '@/types/task';
 import styles from './TaskBoard.module.scss';
-import TaskColumn from '../TaskCard/TaskCard';
+import TaskCard from '../TaskCard/TaskCard';
 import ColumnHeader from '@/Components/Molecules/ColumnHeader/ColumnHeader';
 
 interface TaskBoardProps {
+    title: string;
     tasks: Task[];
-    type: TaskStatus;
 }
 
-export default function TaskBoard({ tasks, type }: TaskBoardProps) {
+export default function TaskBoard({ title, tasks }: TaskBoardProps) {
     return (
         <div className={styles.taskBoard}>
-            <ColumnHeader title={type.toUpperCase()} length={tasks.filter((task) => task.status === type).length} />
-            {tasks.filter((task) => task.status === type).map((task) => (
-                <TaskColumn key={task.id} task={task} />
-            ))}
+            <ColumnHeader title={title} length={tasks.length} />
+            {tasks.length > 0 && (
+                <div className={styles.tasksContainer}>
+                    {tasks.map((task) => (
+                        <TaskCard key={task.id} task={task} />
+                    ))}
+                </div>
+            )}
         </div>
-    )
+    );
 }

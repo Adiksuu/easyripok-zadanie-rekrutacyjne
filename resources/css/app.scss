@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@use './variables.scss' as *;
 
 * {
     margin: 0;
@@ -10,5 +8,12 @@
     list-style: none;
     border: none;
     outline: none;
-    transition: all .3s ease-in-out;
+}
+
+html,
+body,
+#app {
+    height: 100%;
+    background-color: $black;
+    color: $white;
 }
